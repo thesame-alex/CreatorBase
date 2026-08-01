@@ -99,3 +99,65 @@ Added:
 - Improve comparison system
 - Add category filtering improvements
 - Add more creator analytics metrics
+
+# CreatorBase v0.4.0 — Battle Mode Update
+
+## ⚔️ New: Creator Battle
+
+* Added a dedicated Battle page.
+* Compare two creators side-by-side.
+* Category selection required before searching.
+* Search now only returns creators from the selected category.
+* Prevents comparing creators from different categories.
+
+## 📊 Radar Comparison
+
+* Added an interactive radar chart using Chart.js.
+* Compares creator ratings across all tracked attributes.
+* Removed the redundant chart legend for a cleaner layout.
+
+## 📋 Comparison Table
+
+* Added a responsive stat comparison table beneath the radar chart.
+* Shows every rating for both creators in one place.
+* Player rows now match the radar colors:
+
+  * 🔵 Challenger
+  * 🟡 Opponent
+
+## 🎨 UI Improvements
+
+* Redesigned Battle page layout.
+* Cleaner spacing and alignment.
+* Improved autocomplete dropdown styling.
+* Fixed dark mode dropdown text visibility.
+* Improved mobile responsiveness.
+* Reduced unnecessary scrolling.
+* Better organization of comparison data.
+
+## 🌙 Theme Improvements
+
+* Light/Dark mode now behaves consistently across pages.
+* Profile pages now respect the selected theme.
+* Battle page components adapt correctly to theme changes.
+
+## 🏆 Rankings
+
+* Rankings page no longer loads every creator at once.
+* Faster loading with filtered results.
+
+## 🔍 Search
+
+* Improved autocomplete speed.
+* Alphabetically sorted search suggestions.
+* Limited suggestions for faster browsing.
+
+## 🖼️ Branding
+
+* Added CreatorBase favicon.
+* Improved browser tab appearance.
+
+## 🛠️ General
+
+* Various bug fixes and UI polish.
+* Improved overall stability and responsiveness.
