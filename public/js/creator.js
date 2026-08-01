@@ -8,6 +8,7 @@ let creator = null;
 let creators = [];
 
 
+
 /* ==========================
 LOAD CREATOR
 ========================== */
@@ -15,12 +16,15 @@ LOAD CREATOR
 
 async function loadCreator(){
 
-    const params = new URLSearchParams(window.location.search);
+    const params =
+        new URLSearchParams(window.location.search);
 
-    const slug = params.get("slug");
+    const slug =
+        params.get("slug");
 
 
     console.log("Loading creator:", slug);
+
 
 
     if(!slug){
@@ -31,6 +35,7 @@ async function loadCreator(){
         return;
 
     }
+
 
 
     try{
@@ -49,7 +54,8 @@ async function loadCreator(){
 
 
 
-        creator = await creatorResponse.json();
+        creator =
+            await creatorResponse.json();
 
 
 
@@ -58,7 +64,8 @@ async function loadCreator(){
 
 
 
-        creators = await creatorsResponse.json();
+        creators =
+            await creatorsResponse.json();
 
 
 
@@ -75,6 +82,7 @@ async function loadCreator(){
 
 
     }
+
 
 
     catch(error){
@@ -152,58 +160,57 @@ INFORMATION
 function renderInformation(){
 
 
-const box =
-document.getElementById("creatorInformation");
+    const box =
+        document.getElementById("creatorInformation");
 
 
-if(!box) return;
-
-
-
-box.innerHTML = `
-
-
-<div class="creator-item">
-
-<span>Category</span>
-
-<strong>${creator.category}</strong>
-
-</div>
+    if(!box) return;
 
 
 
-<div class="creator-item">
-
-<span>Specialization</span>
-
-<strong>${creator.subcategory}</strong>
-
-</div>
+    box.innerHTML = `
 
 
+        <div class="creator-item">
 
-<div class="creator-item">
+            <span>Category</span>
 
-<span>Country</span>
+            <strong>${creator.category}</strong>
 
-<strong>${creator.country}</strong>
-
-</div>
+        </div>
 
 
 
-<div class="creator-item">
+        <div class="creator-item">
 
-<span>Overall Rating</span>
+            <span>Specialization</span>
 
-<strong>${creator.overall}</strong>
+            <strong>${creator.subcategory}</strong>
 
-</div>
+        </div>
 
 
-`;
 
+        <div class="creator-item">
+
+            <span>Country</span>
+
+            <strong>${creator.country}</strong>
+
+        </div>
+
+
+
+        <div class="creator-item">
+
+            <span>Overall Rating</span>
+
+            <strong>${creator.overall}</strong>
+
+        </div>
+
+
+    `;
 
 
 }
@@ -220,59 +227,60 @@ METADATA
 function renderMetadata(){
 
 
-const box =
-document.getElementById("creatorMetadata");
+    const box =
+        document.getElementById("creatorMetadata");
 
 
-if(!box) return;
-
-
-
-box.innerHTML = `
-
-
-<div class="creator-item">
-
-<span>Verified</span>
-
-<strong>
-${creator.metadata?.verified ? "✅ Verified" : "❌ Not Verified"}
-</strong>
-
-</div>
+    if(!box) return;
 
 
 
-<div class="creator-item">
-
-<span>Featured</span>
-
-<strong>
-${creator.metadata?.featured ? "⭐ Featured" : "No"}
-</strong>
-
-</div>
+    box.innerHTML = `
 
 
+        <div class="creator-item">
 
-<div class="creator-item">
+            <span>Verified</span>
 
-<span>Added</span>
+            <strong>
+                ${creator.metadata?.verified
+                ? "✅ Verified"
+                : "❌ Not Verified"}
+            </strong>
 
-<strong>
-${creator.metadata?.createdAt ?? "Unknown"}
-</strong>
-
-</div>
+        </div>
 
 
 
-`;
+        <div class="creator-item">
 
+            <span>Featured</span>
+
+            <strong>
+                ${creator.metadata?.featured
+                ? "⭐ Featured"
+                : "No"}
+            </strong>
+
+        </div>
+
+
+
+        <div class="creator-item">
+
+            <span>Added</span>
+
+            <strong>
+                ${creator.metadata?.createdAt ?? "Unknown"}
+            </strong>
+
+        </div>
+
+
+    `;
 
 
 }
-
 
 
 
@@ -286,83 +294,81 @@ STATS
 function renderStats(){
 
 
-const container =
-document.getElementById("creatorStats");
+    const container =
+        document.getElementById("creatorStats");
+
+
+    if(!container) return;
 
 
 
-if(!container) return;
+    container.innerHTML = "";
 
 
 
-container.innerHTML = "";
+    Object.entries(creator.stats || {})
+    .forEach(([name,value])=>{
+
+
+        container.innerHTML += `
+
+
+        <div class="stat-comparison">
+
+
+            <div class="stat-header">
+
+                ${name}
+
+            </div>
 
 
 
-Object.entries(creator.stats || {})
-.forEach(([name,value])=>{
+            <div class="stat-player">
 
 
-container.innerHTML += `
+                <div class="stat-name">
 
+                    ${name}
 
-<div class="stat-comparison">
-
-
-<div class="stat-header">
-
-${name}
-
-</div>
+                </div>
 
 
 
-<div class="stat-player winner">
+                <div class="stat-bar">
 
+                    <div
+                        class="stat-fill"
+                        style="width:${value}%"
+                    >
 
-<div class="stat-name">
+                    </div>
 
-${name}
-
-</div>
-
-
-
-<div class="stat-bar">
-
-<div class="stat-fill"
-style="width:${value}%">
-
-</div>
-
-</div>
+                </div>
 
 
 
-<strong>
+                <strong>
 
-${value}
+                    ${value}
 
-</strong>
-
-
-
-</div>
-
-
-</div>
-
-
-`;
+                </strong>
 
 
 
-});
+            </div>
 
+
+        </div>
+
+
+        `;
+
+
+    });
 
 
 }
-
 
 
 
@@ -376,90 +382,90 @@ SIMILAR CREATORS
 function renderSimilarCreators(){
 
 
-const container =
-document.getElementById("similarCreators");
+    const container =
+        document.getElementById("similarCreators");
 
 
-if(!container) return;
-
-
-
-const similar =
-creators
-
-.filter(c=>
-
-c.slug !== creator.slug &&
-
-c.category === creator.category
-
-)
-
-.slice(0,4);
+    if(!container) return;
 
 
 
-if(similar.length === 0){
+    const similar =
+        creators
+
+        .filter(c =>
+
+            c.slug !== creator.slug &&
+
+            c.category === creator.category
+
+        )
+
+        .slice(0,4);
 
 
-container.innerHTML =
-"<p>No similar creators found.</p>";
 
 
-return;
+    if(similar.length === 0){
+
+
+        container.innerHTML =
+            "<p>No similar creators found.</p>";
+
+
+        return;
+
+
+    }
+
+
+
+    container.innerHTML = "";
+
+
+
+    similar.forEach(c=>{
+
+
+        container.innerHTML += `
+
+
+        <div class="creator-item">
+
+
+            <a
+                href="creator.html?slug=${c.slug}"
+                style="color:inherit;text-decoration:none;"
+            >
+
+                <span>
+
+                    ${c.name}
+
+                </span>
+
+
+            </a>
+
+
+
+            <strong>
+
+                ${c.overall}
+
+            </strong>
+
+
+        </div>
+
+
+        `;
+
+
+    });
 
 
 }
-
-
-
-container.innerHTML = "";
-
-
-
-similar.forEach(c=>{
-
-
-container.innerHTML += `
-
-
-<div class="creator-item">
-
-
-<a href="creator.html?slug=${c.slug}"
-style="color:inherit;text-decoration:none;">
-
-
-<span>
-
-${c.name}
-
-</span>
-
-
-</a>
-
-
-<strong>
-
-${c.overall}
-
-</strong>
-
-
-</div>
-
-
-`;
-
-
-
-});
-
-
-
-}
-
 
 
 
@@ -472,9 +478,9 @@ HELPER
 
 function capitalize(text){
 
-if(!text) return "";
+    if(!text) return "";
 
-return text.charAt(0).toUpperCase()+text.slice(1);
+    return text.charAt(0).toUpperCase() + text.slice(1);
 
 }
 
@@ -488,10 +494,10 @@ START
 
 
 window.addEventListener(
-"DOMContentLoaded",
-()=>{
+    "DOMContentLoaded",
+    ()=>{
 
-loadCreator();
+        loadCreator();
 
-}
+    }
 );

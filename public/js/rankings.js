@@ -240,7 +240,9 @@ function renderRankings() {
 
     tbody.innerHTML = "";
 
-    filteredCreators.forEach((creator,index)=>{
+    filteredCreators
+    .slice(0, 100)
+    .forEach((creator, index) => {
 
         tbody.innerHTML += `
 

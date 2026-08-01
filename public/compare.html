@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Compare Creators | CreatorBase</title>
+    <title>Creator Battle | CreatorBase</title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -31,11 +31,9 @@
 
             <li><a href="index.html">Home</a></li>
 
-            <!-- <li><a href="compare.html">Compare</a></li> -->
+            <li><a href="compare.html" class="active">Battle</a></li>
 
             <li><a href="rankings.html">Rankings</a></li>
-
-            <!-- <li><a href="categories.html">Categories</a></li> -->
 
         </ul>
 
@@ -45,30 +43,24 @@
 
 </header>
 
-
 <main>
 
+<section class="hero battle-hero">
 
-<section class="hero">
-
-    <h1>
-        Compare Creators
-    </h1>
+    <h1>⚔️ Creator Battle</h1>
 
     <p>
-        Analyze creators side by side using CreatorBase ratings.
+        Compare any two creators and see who comes out on top.
     </p>
 
-
-    <div class="search-box">
-
+    <div class="battle-search">
 
         <div class="search-wrapper">
 
             <input
                 id="creatorOne"
                 type="text"
-                placeholder="Search first creator..."
+                placeholder="Choose Challenger..."
                 autocomplete="off"
             >
 
@@ -79,13 +71,18 @@
 
         </div>
 
+        <div class="battle-vs">
+
+            VS
+
+        </div>
 
         <div class="search-wrapper">
 
             <input
                 id="creatorTwo"
                 type="text"
-                placeholder="Search second creator..."
+                placeholder="Choose Opponent..."
                 autocomplete="off"
             >
 
@@ -96,46 +93,37 @@
 
         </div>
 
-
-        <button id="compareBtn">
-
-            Compare
-
-        </button>
-
-
     </div>
 
+    <button id="compareBtn" class="battle-button">
+
+        ⚔️ Start Battle
+
+    </button>
 
 </section>
-
-
 
 <section id="comparison">
 
-<!-- JS inserts comparison here -->
-
+    <!-- compare.js -->
 
 </section>
 
-
-
 </main>
-
 
 <footer>
 
 <p>
+
 © 2026 CreatorBase
+
 </p>
 
 </footer>
 
-
 <script src="js/theme.js"></script>
 
 <script src="js/compare.js"></script>
-
 
 </body>
 

@@ -288,69 +288,153 @@ function statRows(first, second) {
 }
 function displayComparison(first, second) {
 
+    let firstWins = 0;
+    let secondWins = 0;
+
+    let statsHTML = "";
+
+    Object.keys(first.stats).forEach(stat => {
+
+        const a = first.stats[stat];
+        const b = second.stats[stat];
+
+        let winner = "Draw";
+
+        if (a > b) {
+
+            winner = first.name;
+            firstWins++;
+
+        } else if (b > a) {
+
+            winner = second.name;
+            secondWins++;
+
+        }
+
+        statsHTML += `
+
+            <div class="battle-stat">
+
+                <div class="battle-stat-title">
+
+                    ${stat}
+
+                </div>
+
+                <div class="battle-row">
+
+                    <div class="battle-side ${a>b?"winner":""}">
+
+                        <strong>${first.name}</strong>
+
+                        <span>${a}</span>
+
+                    </div>
+
+                    <div class="battle-vs-small">
+
+                        VS
+
+                    </div>
+
+                    <div class="battle-side ${b>a?"winner":""}">
+
+                        <strong>${second.name}</strong>
+
+                        <span>${b}</span>
+
+                    </div>
+
+                </div>
+
+                <div class="battle-winner">
+
+                    🏆 Winner: ${winner}
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+    let overallWinner = "Draw";
+
+    if (firstWins > secondWins) {
+
+        overallWinner = first.name;
+
+    } else if (secondWins > firstWins) {
+
+        overallWinner = second.name;
+
+    }
+
     document.getElementById("comparison").innerHTML = `
 
-        <div class="dashboard">
+        <div class="battle-card">
 
-            <div class="panel">
+            <div class="battle-player">
 
                 <h2>${first.name}</h2>
 
-                <h1>${first.overall}</h1>
+                <div class="battle-score">
 
-                <p><strong>Category:</strong> ${first.category}</p>
+                    ${first.overall}
 
-                <p><strong>Country:</strong> ${first.country}</p>
+                </div>
 
             </div>
 
-            <div class="panel">
+            <div class="battle-center">
+
+                ⚔️
+
+            </div>
+
+            <div class="battle-player">
 
                 <h2>${second.name}</h2>
 
-                <h1>${second.overall}</h1>
+                <div class="battle-score">
 
-                <p><strong>Category:</strong> ${second.category}</p>
+                    ${second.overall}
 
-                <p><strong>Country:</strong> ${second.country}</p>
+                </div>
 
             </div>
 
         </div>
 
-        <div class="leaderboard" style="margin-top:30px;">
+        <div class="battle-summary">
 
-            <h2 style="margin-bottom:20px;">
+            <h2>
 
-                Stat Comparison
+                🏆 Overall Winner
 
             </h2>
 
-            <table>
+            <h1>
 
-                <thead>
+                ${overallWinner}
 
-                    <tr>
+            </h1>
 
-                        <th>Stat</th>
+            <p>
 
-                        <th>${first.name}</th>
+                ${first.name}: ${firstWins} Wins
 
-                        <th>${second.name}</th>
+                &nbsp;&nbsp;•&nbsp;&nbsp;
 
-                    </tr>
+                ${second.name}: ${secondWins} Wins
 
-                </thead>
-
-                <tbody>
-
-                    ${statRows(first, second)}
-
-                </tbody>
-
-            </table>
+            </p>
 
         </div>
+
+        ${statsHTML}
 
     `;
 

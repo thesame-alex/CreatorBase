@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "slug": "kai-cenat",
+    "name": "Kai Cenat",
+    "category": "streamer",
+    "subcategory": "variety",
+    "overall": 95,
+    "country": "United States",
+    "age": 24,
+    "profileImage": "images/kai.jpg",
+    "bio": "Popular streamer and content creator.",
+    "platforms": {
+      "youtube": {
+        "username": "KaiCenat",
+        "subscribers": 18900000,
+        "url": "https://youtube.com/@KaiCenat"
+      },
+      "twitch": {
+        "username": "kaicenat",
+        "followers": 17200000,
+        "averageViewers": 132000,
+        "peakViewers": 728000,
+        "url": "https://twitch.tv/kaicenat"
+      },
+      "instagram": {
+        "username": "kaicenat",
+        "followers": 14200000,
+        "url": "https://instagram.com/kaicenat"
+      },
+      "tiktok": {
+        "username": "kaicenat",
+        "followers": 17400000,
+        "url": "https://tiktok.com/@kaicenat"
+      }
+    },
+    "stats": {
+      "stat1": 93,
+      "stat2": 99,
+      "stat3": 97,
+      "stat4": 96,
+      "stat5": 94,
+      "stat6": 95
+    },
+    "metadata": {
+      "verified": true,
+      "featured": true,
+      "lastUpdated": "2026-07-29"
+    }
+  }
+]
