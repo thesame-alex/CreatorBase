@@ -1,8 +1,13 @@
-let creators = [];
+/* ==========================================
+   CREATORBASE BATTLE MODE
+========================================== */
 
-// ======================================
-// LOAD CREATORS
-// ======================================
+let creators = [];
+let radarChart = null;
+
+/* ===========================
+LOAD DATABASE
+=========================== */
 
 async function loadCreators() {
 
@@ -10,15 +15,46 @@ async function loadCreators() {
 
     creators = await response.json();
 
+    loadCategories();
+
 }
 
-// ======================================
-// AUTOCOMPLETE
-// ======================================
+/* ===========================
+LOAD CATEGORIES
+=========================== */
+
+function loadCategories() {
+
+    const select = document.getElementById("battleCategory");
+
+    const categories = [
+        ...new Set(creators.map(c => c.category))
+    ].sort();
+
+    categories.forEach(category => {
+
+        const option = document.createElement("option");
+
+        option.value = category;
+
+        option.textContent =
+            category.charAt(0).toUpperCase() +
+            category.slice(1);
+
+        select.appendChild(option);
+
+    });
+
+}
+
+/* ===========================
+AUTOCOMPLETE
+=========================== */
 
 function setupAutocomplete(inputId, resultsId) {
 
     const input = document.getElementById(inputId);
+
     const results = document.getElementById(resultsId);
 
     input.addEventListener("input", () => {
@@ -35,22 +71,37 @@ function setupAutocomplete(inputId, resultsId) {
 
         }
 
+        const category =
+            document.getElementById("battleCategory").value;
+
+        if (!category) {
+
+            results.style.display = "none";
+
+            return;
+
+        }
+
         const matches = creators
-    .filter(c => {
 
-        const name = c.name.toLowerCase();
-        const slug = c.slug.toLowerCase();
+        .filter(c =>
 
-        return (
-            name.includes(query) ||
-            slug.includes(query)
-        );
+            c.category === category &&
 
-    })
-    .sort((a, b) =>
-        a.name.localeCompare(b.name)
-    )
-    .slice(0, 8);
+            (
+
+                c.name.toLowerCase().includes(query) ||
+
+                c.slug.toLowerCase().includes(query)
+
+            )
+
+        )
+
+        .sort((a,b)=>a.name.localeCompare(b.name))
+
+        .slice(0,8);
+
         if (!matches.length) {
 
             results.style.display = "none";
@@ -59,7 +110,7 @@ function setupAutocomplete(inputId, resultsId) {
 
         }
 
-        matches.forEach(creator => {
+        matches.forEach(creator=>{
 
             const item = document.createElement("div");
 
@@ -67,15 +118,13 @@ function setupAutocomplete(inputId, resultsId) {
 
             item.textContent = creator.name;
 
-            item.addEventListener("click", () => {
+            item.onclick = ()=>{
 
                 input.value = creator.name;
 
-                results.innerHTML = "";
-
                 results.style.display = "none";
 
-            });
+            };
 
             results.appendChild(item);
 
@@ -85,61 +134,59 @@ function setupAutocomplete(inputId, resultsId) {
 
     });
 
-    input.addEventListener("keydown", e => {
+}
 
-        if (e.key === "Enter") {
+/* ===========================
+GET CREATOR
+=========================== */
 
-            e.preventDefault();
+function getCreator(name){
 
-            compareCreators();
+    return creators.find(c=>
 
-        }
+        c.name.toLowerCase() ===
+        name.toLowerCase()
 
-    });
-
-    document.addEventListener("click", e => {
-
-        if (
-
-            !input.contains(e.target) &&
-
-            !results.contains(e.target)
-
-        ) {
-
-            results.style.display = "none";
-
-        }
-
-    });
+    );
 
 }
 
-// ======================================
-// COMPARE
-// ======================================
+/* ===========================
+START BATTLE
+=========================== */
 
-async function compareCreators() {
+function startBattle(){
 
-    const first = document
-        .getElementById("creatorOne")
-        .value
-        .trim();
+    const category =
+        document.getElementById("battleCategory").value;
 
-    const second = document
-        .getElementById("creatorTwo")
-        .value
-        .trim();
+    if(!category){
 
-    if (!first || !second) {
-
-        alert("Select two creators.");
+        alert("Choose a category first.");
 
         return;
 
     }
 
-    if (first.toLowerCase() === second.toLowerCase()) {
+    const first =
+        getCreator(
+            document.getElementById("creatorOne").value
+        );
+
+    const second =
+        getCreator(
+            document.getElementById("creatorTwo").value
+        );
+
+    if(!first || !second){
+
+        alert("Choose two creators.");
+
+        return;
+
+    }
+
+    if(first.slug === second.slug){
 
         alert("Choose two different creators.");
 
@@ -147,327 +194,272 @@ async function compareCreators() {
 
     }
 
-    const response = await fetch(
+    document.getElementById("leftName").textContent =
+        first.name;
 
-        `/api/compare?first=${encodeURIComponent(first)}&second=${encodeURIComponent(second)}`
+    document.getElementById("rightName").textContent =
+        second.name;
 
-    );
+    drawRadar(first,second);
 
-    const data = await response.json();
+    buildTable(first,second);
 
-    if (!response.ok) {
+}
+/* ==========================================
+   RADAR CHART
+========================================== */
 
-        alert(data.error);
+function drawRadar(first, second) {
 
-        return;
+    const labels = Object.keys(first.stats);
+
+    const firstStats = labels.map(label => first.stats[label]);
+
+    const secondStats = labels.map(label => second.stats[label]);
+
+    const canvas = document.getElementById("battleRadar");
+
+    if (radarChart) {
+
+        radarChart.destroy();
 
     }
 
-    displayComparison(data.first, data.second);
+    radarChart = new Chart(canvas, {
 
-}
+        type: "radar",
 
-// ======================================
-// DISPLAY
-// ======================================
+        data: {
 
-function statRows(first, second) {
+            labels: labels,
 
-    const stats = Object.keys(first.stats);
+            datasets: [
 
-    return stats.map(stat => {
+                {
 
-        const firstScore = first.stats[stat];
+                    label: first.name,
 
-        const secondScore = second.stats[stat];
+                    data: firstStats,
 
+                    borderColor: "#3b82f6",
 
-        let firstWinner = "";
+                    backgroundColor: "rgba(59,130,246,.20)",
 
-        let secondWinner = "";
+                    pointBackgroundColor: "#3b82f6",
 
+                    pointRadius: 4,
 
-        if (firstScore > secondScore) {
+                    borderWidth: 3,
 
-            firstWinner = "winner";
+                    fill: true
 
-        } 
-        
-        else if (secondScore > firstScore) {
+                },
 
-            secondWinner = "winner";
+                {
+
+                    label: second.name,
+
+                    data: secondStats,
+
+                    borderColor: "#f59e0b",
+
+                    backgroundColor: "rgba(245,158,11,.20)",
+
+                    pointBackgroundColor: "#f59e0b",
+
+                    pointRadius: 4,
+
+                    borderWidth: 3,
+
+                    fill: true
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            animation: {
+
+                duration: 700
+
+            },
+
+           plugins: {
+
+    legend: {
+
+        display: false
+
+    }
+
+},
+
+            scales: {
+
+                r: {
+
+                    min: 0,
+
+                    max: 100,
+
+                    ticks: {
+
+                        stepSize: 20,
+
+                        backdropColor: "transparent",
+
+                        color: "#888"
+
+                    },
+
+                    grid: {
+
+                        color: "rgba(255,255,255,.12)"
+
+                    },
+
+                    angleLines: {
+
+                        color: "rgba(255,255,255,.12)"
+
+                    },
+
+                   pointLabels: {
+
+    color: document.body.classList.contains("light-mode")
+        ? "#111827"
+        : "#ffffff",
+
+                        font: {
+
+                            size: 14,
+
+                            weight: "bold"
+
+                        }
+
+                    }
+
+                }
+
+            }
 
         }
-
-
-        return `
-
-        <div class="stat-comparison">
-
-
-            <div class="stat-header">
-
-                <span>${stat}</span>
-
-            </div>
-
-
-
-            <div class="stat-player ${firstWinner}">
-
-                <div class="stat-name">
-
-                    ${first.name}
-
-                    ${firstScore > secondScore ? "🏆" : ""}
-
-                </div>
-
-
-                <div class="stat-bar">
-
-                    <div 
-                        class="stat-fill"
-                        style="width:${firstScore}%"
-                    >
-
-                    </div>
-
-                </div>
-
-
-                <strong>
-
-                    ${firstScore}
-
-                </strong>
-
-            </div>
-
-
-
-
-            <div class="stat-player ${secondWinner}">
-
-                <div class="stat-name">
-
-                    ${second.name}
-
-                    ${secondScore > firstScore ? "🏆" : ""}
-
-                </div>
-
-
-                <div class="stat-bar">
-
-                    <div 
-                        class="stat-fill"
-                        style="width:${secondScore}%"
-                    >
-
-                    </div>
-
-                </div>
-
-
-                <strong>
-
-                    ${secondScore}
-
-                </strong>
-
-            </div>
-
-
-        </div>
-
-        `;
-
-    }).join("");
-
-}
-function displayComparison(first, second) {
-
-    let firstWins = 0;
-    let secondWins = 0;
-
-    let statsHTML = "";
-
-    Object.keys(first.stats).forEach(stat => {
-
-        const a = first.stats[stat];
-        const b = second.stats[stat];
-
-        let winner = "Draw";
-
-        if (a > b) {
-
-            winner = first.name;
-            firstWins++;
-
-        } else if (b > a) {
-
-            winner = second.name;
-            secondWins++;
-
-        }
-
-        statsHTML += `
-
-            <div class="battle-stat">
-
-                <div class="battle-stat-title">
-
-                    ${stat}
-
-                </div>
-
-                <div class="battle-row">
-
-                    <div class="battle-side ${a>b?"winner":""}">
-
-                        <strong>${first.name}</strong>
-
-                        <span>${a}</span>
-
-                    </div>
-
-                    <div class="battle-vs-small">
-
-                        VS
-
-                    </div>
-
-                    <div class="battle-side ${b>a?"winner":""}">
-
-                        <strong>${second.name}</strong>
-
-                        <span>${b}</span>
-
-                    </div>
-
-                </div>
-
-                <div class="battle-winner">
-
-                    🏆 Winner: ${winner}
-
-                </div>
-
-            </div>
-
-        `;
 
     });
 
-    let overallWinner = "Draw";
+}
+/* ==========================================
+   COMPARISON TABLE
+========================================== */
 
-    if (firstWins > secondWins) {
+function buildTable(first, second) {
 
-        overallWinner = first.name;
+    const stats = Object.keys(first.stats);
 
-    } else if (secondWins > firstWins) {
+    const head = document.getElementById("tableHead");
+    const body = document.getElementById("tableBody");
 
-        overallWinner = second.name;
+    head.innerHTML = "<th>Creator</th>";
 
-    }
+    stats.forEach(stat => {
 
-    document.getElementById("comparison").innerHTML = `
+        head.innerHTML += `<th>${stat}</th>`;
 
-        <div class="battle-card">
+    });
 
-            <div class="battle-player">
+    body.innerHTML = "";
 
-                <h2>${first.name}</h2>
-
-                <div class="battle-score">
-
-                    ${first.overall}
-
-                </div>
-
-            </div>
-
-            <div class="battle-center">
-
-                ⚔️
-
-            </div>
-
-            <div class="battle-player">
-
-                <h2>${second.name}</h2>
-
-                <div class="battle-score">
-
-                    ${second.overall}
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="battle-summary">
-
-            <h2>
-
-                🏆 Overall Winner
-
-            </h2>
-
-            <h1>
-
-                ${overallWinner}
-
-            </h1>
-
-            <p>
-
-                ${first.name}: ${firstWins} Wins
-
-                &nbsp;&nbsp;•&nbsp;&nbsp;
-
-                ${second.name}: ${secondWins} Wins
-
-            </p>
-
-        </div>
-
-        ${statsHTML}
-
+    let firstRow = `
+        <tr class="player-one">
+            <td><strong>${first.name}</strong></td>
     `;
+
+    stats.forEach(stat => {
+
+        firstRow += `<td>${first.stats[stat]}</td>`;
+
+    });
+
+    firstRow += "</tr>";
+
+    let secondRow = `
+        <tr class="player-two">
+            <td><strong>${second.name}</strong></td>
+    `;
+
+    stats.forEach(stat => {
+
+        secondRow += `<td>${second.stats[stat]}</td>`;
+
+    });
+
+    secondRow += "</tr>";
+
+    body.innerHTML = firstRow + secondRow;
+
+}
+/* ==========================================
+   RESET
+========================================== */
+
+function resetBattle() {
+
+    document.getElementById("comparison").style.display = "none";
+
+    document.getElementById("creatorOne").value = "";
+
+    document.getElementById("creatorTwo").value = "";
+
+    document.getElementById("creatorOneResults").innerHTML = "";
+
+    document.getElementById("creatorTwoResults").innerHTML = "";
 
 }
 
-// ======================================
-// START
-// ======================================
+/* ==========================================
+   START
+========================================== */
 
 window.addEventListener("DOMContentLoaded", async () => {
 
     await loadCreators();
 
     setupAutocomplete(
-
         "creatorOne",
-
         "creatorOneResults"
-
     );
 
     setupAutocomplete(
-
         "creatorTwo",
-
         "creatorTwoResults"
-
     );
 
     document
+        .getElementById("comparison")
+        .style.display = "none";
 
+    document
         .getElementById("compareBtn")
+        .addEventListener("click", () => {
 
-        .addEventListener("click", compareCreators);
+            document
+                .getElementById("comparison")
+                .style.display = "grid";
+
+            startBattle();
+
+        });
+
+    document
+        .getElementById("battleCategory")
+        .addEventListener("change", resetBattle);
 
 });

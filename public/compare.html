@@ -10,9 +10,13 @@
     <title>Creator Battle | CreatorBase</title>
 
     <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-<link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="css/compare.css">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
 </head>
 
 <body>
@@ -45,71 +49,129 @@
 
 </header>
 
-<main>
+<main class="battle-page">
 
-<section class="hero battle-hero">
+    <!-- =========================
+         TOP CONTROLS
+    ========================== -->
 
-    <h1>⚔️ Creator Battle</h1>
+    <section class="battle-controls">
 
-    <p>
-        Compare any two creators and see who comes out on top.
-    </p>
+        <select id="battleCategory">
 
-    <div class="battle-search">
+            <option value="">Choose Category</option>
 
-        <div class="search-wrapper">
+        </select>
 
-            <input
-                id="creatorOne"
-                type="text"
-                placeholder="Choose Challenger..."
-                autocomplete="off"
-            >
+        <div class="battle-search-row">
 
-            <div
-                id="creatorOneResults"
-                class="search-results"
-            ></div>
+            <div class="search-wrapper">
+
+                <input
+                    id="creatorOne"
+                    type="text"
+                    placeholder="Choose Challenger"
+                    autocomplete="off"
+                >
+
+                <div
+                    id="creatorOneResults"
+                    class="search-results"
+                ></div>
+
+            </div>
+
+            <div class="battle-vs">
+
+                VS
+
+            </div>
+
+            <div class="search-wrapper">
+
+                <input
+                    id="creatorTwo"
+                    type="text"
+                    placeholder="Choose Opponent"
+                    autocomplete="off"
+                >
+
+                <div
+                    id="creatorTwoResults"
+                    class="search-results"
+                ></div>
+
+            </div>
 
         </div>
 
-        <div class="battle-vs">
+        <button id="compareBtn">
 
-            VS
+            Start Battle
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         COMPARISON
+    ========================== -->
+
+    <section id="comparison" class="comparison-area">
+
+        <div class="comparison-header">
+
+            <h2 id="leftName">
+
+                Challenger
+
+            </h2>
+
+            <h2 id="rightName">
+
+                Opponent
+
+            </h2>
 
         </div>
 
-        <div class="search-wrapper">
 
-            <input
-                id="creatorTwo"
-                type="text"
-                placeholder="Choose Opponent..."
-                autocomplete="off"
-            >
 
-            <div
-                id="creatorTwoResults"
-                class="search-results"
-            ></div>
+        <div class="radar-container">
+
+            <canvas id="battleRadar"></canvas>
 
         </div>
 
-    </div>
 
-    <button id="compareBtn" class="battle-button">
 
-        ⚔️ Start Battle
+        <div class="table-container">
 
-    </button>
+            <table id="battleTable">
 
-</section>
+                <thead>
 
-<section id="comparison">
+                    <tr id="tableHead">
 
-    <!-- compare.js -->
+                        <!-- compare.js -->
 
-</section>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tableBody">
+
+                    <!-- compare.js -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
 
 </main>
 
@@ -122,6 +184,8 @@
 </p>
 
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="js/theme.js"></script>
 
