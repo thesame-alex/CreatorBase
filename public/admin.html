@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreatorBase Admin</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+ <div id="categoryModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Create Category</h2>
+
+        <input
+            id="newCategoryName"
+            placeholder="Category Name"
+        >
+
+        <textarea
+            id="newSubcategories"
+            placeholder="One specialization per line"
+        ></textarea>
+
+        <textarea
+            id="newStats"
+            placeholder="One rating stat per line"
+        ></textarea>
+
+        <button id="saveCategory">
+
+            Save Category
+
+        </button>
+
+    </div>
+
+</div>
+<body>
+
+<div class="container">
+
+    <h1>CreatorBase Admin</h1>
+
+    <form id="creatorForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Creator Name"
+            required
+        >
+
+        <select id="category">
+
+            <option value="streamer">Streamer</option>
+
+            <option value="youtuber">YouTuber</option>
+
+            <option value="musician">Musician</option>
+
+            <option value="actor">Actor</option>
+
+            <option value="athlete">Athlete</option>
+
+        </select>
+<select id="subcategory">
+    <option value="">Select Subcategory</option>
+</select>
+       
+
+        <select id="country">
+
+    <option value="">Select Country</option>
+
+</select>
+        <div id="statsContainer"></div>
+
+        <button type="submit">
+
+            Save Creator
+
+        </button>
+
+    </form>
+    <hr>
+
+<h2>Category Studio</h2>
+
+<button id="newCategoryBtn">
+    + New Category
+</button>
+
+    <p id="message"></p>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

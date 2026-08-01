@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Category | CreatorBase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+
+            <h2>CreatorBase</h2>
+
+            <span>Creator Analytics Database</span>
+
+        </div>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="compare.html">Compare</a></li>
+
+            <li><a href="rankings.html">Rankings</a></li>
+
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1 id="categoryTitle">
+
+            Loading...
+
+        </h1>
+
+        <p id="categoryDescription">
+
+            Loading category...
+
+        </p>
+
+    </section>
+
+    <!-- CATEGORY TABLE -->
+
+    <section class="leaderboard">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Creator Rankings
+
+            </h2>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Creator</th>
+
+                    <th>Country</th>
+
+                    <th>Overall</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="categoryBody">
+
+                <!-- Filled by category.js -->
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p>
+
+        © 2026 CreatorBase
+
+    </p>
+
+</footer>
+
+<script src="js/category.js"></script>
+
+</body>
+
+</html>

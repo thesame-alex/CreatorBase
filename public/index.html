@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CreatorBase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+
+            <h2>CreatorBase</h2>
+
+            <span>Creator Analytics Database</span>
+
+        </div>
+
+        <ul>
+
+            <!-- <li><a href="index.html">Home</a></li> -->
+
+            <li><a href="compare.html">Compare</a></li>
+
+            <li><a href="rankings.html">Rankings</a></li>
+
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+
+            The World's Largest Creator Database
+
+        </h1>
+
+        <p>
+
+            Search, compare and analyze creators from every platform.
+
+        </p>
+
+        <div class="search-box">
+
+            <div class="search-wrapper">
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search creators..."
+                    autocomplete="off"
+                >
+
+                <div
+                    id="searchResults"
+                    class="search-results"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+
+    <section class="categories" id="categories">
+
+        <!-- Streamers -->
+        <!-- YouTubers -->
+        <!-- Musicians -->
+        <!-- Actors -->
+        <!-- Athletes -->
+        <!-- TikTokers -->
+
+    </section>
+
+    <!-- FEATURED -->
+
+    <section class="dashboard">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+
+                    Trending Creators
+
+                </h2>
+
+            </div>
+
+            <div id="trendingCreators"></div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+
+                    Recently Updated
+
+                </h2>
+
+            </div>
+
+            <div id="recentUpdates"></div>
+
+        </div>
+
+    </section>
+
+    <!-- LEADERBOARD -->
+
+    <section class="leaderboard">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Top Creators
+
+            </h2>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Name</th>
+
+                    <th>Category</th>
+
+                    <th>Rating</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="leaderboardBody"></tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p>
+
+        © 2026 CreatorBase
+
+    </p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

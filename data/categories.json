@@ -1,0 +1,32 @@
+[
+  {
+    "id": "streamer",
+    "name": "Streamers",
+    "icon": "🎮",
+    "color": "#7c3aed"
+  },
+  {
+    "id": "musician",
+    "name": "Musicians",
+    "icon": "🎵",
+    "color": "#22c55e"
+  },
+  {
+    "id": "actor",
+    "name": "Actors",
+    "icon": "🎬",
+    "color": "#f59e0b"
+  },
+  {
+    "id": "athlete",
+    "name": "Athletes",
+    "icon": "🏆",
+    "color": "#3b82f6"
+  },
+  {
+    "id": "youtuber",
+    "name": "YouTubers",
+    "icon": "▶️",
+    "color": "#ef4444"
+  }
+]

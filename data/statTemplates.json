@@ -1,0 +1,46 @@
+{
+  "streamer": [
+    "Entertainment",
+    "Consistency",
+    "Interaction",
+    "Growth",
+    "Influence",
+    "Originality"
+  ],
+
+  "youtuber": [
+    "Creativity",
+    "Production",
+    "Consistency",
+    "Influence",
+    "Growth",
+    "Community"
+  ],
+
+  "musician": [
+    "Vocals",
+    "Discography",
+    "Commercial",
+    "Influence",
+    "Performance",
+    "Longevity"
+  ],
+
+  "actor": [
+    "Acting",
+    "Versatility",
+    "Box Office",
+    "Awards",
+    "Influence",
+    "Longevity"
+  ],
+
+  "athlete": [
+    "Skill",
+    "Achievements",
+    "Consistency",
+    "Athleticism",
+    "Influence",
+    "Longevity"
+  ]
+}

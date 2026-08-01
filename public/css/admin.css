@@ -1,0 +1,134 @@
+body{
+
+    background:#0f172a;
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:40px;
+
+}
+
+.container{
+
+    width:600px;
+
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+input,
+select,
+button{
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:none;
+
+}
+
+button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    background:#4f46e5;
+
+    color:white;
+
+    transition:0.2s;
+
+}
+
+button:hover{
+
+    background:#4338ca;
+
+}
+
+button:active{
+
+    transform:scale(0.97);
+
+    filter:brightness(0.75);
+
+}
+
+button:focus{
+
+    outline:none;
+
+    box-shadow:0 0 0 3px rgba(79,70,229,.35);
+
+}
+
+button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.6);
+
+}
+
+.modal-content{
+
+    background:#181818;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    width:500px;
+
+}
+
+.modal textarea{
+
+    width:100%;
+
+    height:140px;
+
+    margin-top:15px;
+
+    margin-bottom:15px;
+
+}
