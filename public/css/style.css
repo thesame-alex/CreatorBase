@@ -69,102 +69,108 @@ body{
 NAVBAR
 ========================== */
 
-
 header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(11,13,18,.92);
+    backdrop-filter:blur(12px);
 
     border-bottom:1px solid var(--border);
 
-    position:sticky;
-
-    top:0;
-
-    background:rgba(11,13,18,.92);
-
-    backdrop-filter:blur(10px);
-
-    z-index:999;
-
 }
 
+.navbar{
 
-
-nav{
-
-    width:min(95%,1600px);
-
+    width:min(95%,1400px);
     margin:auto;
 
-    height:80px;
+    height:72px;
 
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
 
 }
 
+.logo{
 
+    flex:1;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:36px;
+
+    list-style:none;
+
+    margin:auto;
+
+}
+
+#themeToggle{
+
+    margin-left:auto;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+}
 
 .logo h2{
 
-    font-size:30px;
-
+    font-size:28px;
     font-weight:900;
+    color:var(--text);
 
 }
-
-
 
 .logo span{
 
-    color:var(--muted);
-
-    font-size:13px;
+    display:none;
 
 }
 
-
-
-nav ul{
+.nav-links{
 
     list-style:none;
 
     display:flex;
+    justify-content:center;
+    align-items:center;
 
-    gap:35px;
+    gap:34px;
 
 }
 
-
-
-nav a{
-
-    text-decoration:none;
+.nav-links a{
 
     color:var(--muted);
+    text-decoration:none;
 
-    font-weight:500;
+    font-weight:600;
 
     transition:.25s;
 
 }
 
-
-
-nav a:hover{
+.nav-links a:hover,
+.nav-links a.active{
 
     color:var(--text);
 
 }
 
-
-
 #themeToggle{
 
-    width:48px;
-
-    height:48px;
+    width:44px;
+    height:44px;
 
     border-radius:50%;
 
@@ -175,6 +181,101 @@ nav a:hover{
     color:var(--text);
 
     cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:var(--text);
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+/* ==========================
+MOBILE NAVBAR
+========================== */
+
+@media (max-width:900px){
+
+.navbar{
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    flex:none;
+
+}
+
+.menu-toggle{
+
+    display:block;
+    order:1;
+
+}
+
+.logo{
+
+    order:2;
+
+}
+
+#themeToggle{
+
+    order:3;
+    margin-left:0;
+
+}
+
+.nav-links{
+
+    position:absolute;
+
+    top:72px;
+    left:0;
+
+    width:100%;
+
+    display:none;
+
+    flex-direction:column;
+
+    background:var(--surface);
+
+    border-top:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.nav-links.show{
+
+    display:flex;
+
+}
+
+.nav-links a{
+
+    display:block;
+
+    padding:18px;
+
+    text-align:center;
+
+}
 
 }
 

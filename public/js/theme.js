@@ -1,85 +1,111 @@
 /* ======================================
-   CREATORBASE THEME SYSTEM
+   CREATORBASE THEME + MOBILE NAVIGATION
 ====================================== */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-function initializeTheme() {
+    /* ======================
+       THEME
+    ====================== */
 
-    const button = document.getElementById("themeToggle");
+    const themeToggle = document.getElementById("themeToggle");
 
-
-    // Load saved theme
-
-    const savedTheme = localStorage.getItem("theme");
-
-
-    if (savedTheme === "light") {
+    if (localStorage.getItem("theme") === "light") {
 
         document.body.classList.add("light");
 
     }
 
-
     updateThemeButton();
 
+    if (themeToggle) {
 
-
-    if(button){
-
-        button.onclick = () => {
-
+        themeToggle.addEventListener("click", () => {
 
             document.body.classList.toggle("light");
 
-
-            const isLight =
-                document.body.classList.contains("light");
-
-
             localStorage.setItem(
-
                 "theme",
-
-                isLight ? "light" : "dark"
-
+                document.body.classList.contains("light")
+                    ? "light"
+                    : "dark"
             );
-
 
             updateThemeButton();
 
-
-        };
+        });
 
     }
 
-}
+    function updateThemeButton() {
 
+        if (!themeToggle) return;
 
+        themeToggle.textContent =
+            document.body.classList.contains("light")
+                ? "☀️"
+                : "🌙";
 
-function updateThemeButton(){
+    }
 
-    const button =
-        document.getElementById("themeToggle");
+    /* ======================
+       MOBILE MENU
+    ====================== */
 
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-    if(!button) return;
+    if (!menuToggle || !navLinks) return;
 
+    function closeMenu() {
 
-    const isLight =
-        document.body.classList.contains("light");
+        navLinks.classList.remove("show");
+        menuToggle.textContent = "☰";
 
+    }
 
-    button.textContent =
-        isLight ? "☀️" : "🌙";
+    menuToggle.addEventListener("click", (e) => {
 
-}
+        e.stopPropagation();
 
+        navLinks.classList.toggle("show");
 
+        menuToggle.textContent =
+            navLinks.classList.contains("show")
+                ? "✕"
+                : "☰";
 
-window.addEventListener(
+    });
 
-    "DOMContentLoaded",
+    navLinks.querySelectorAll("a").forEach(link => {
 
-    initializeTheme
+        link.addEventListener("click", closeMenu);
 
-);
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (
+
+            !menuToggle.contains(e.target) &&
+            !navLinks.contains(e.target)
+
+        ) {
+
+            closeMenu();
+
+        }
+
+    });
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 900) {
+
+            closeMenu();
+
+        }
+
+    });
+
+});

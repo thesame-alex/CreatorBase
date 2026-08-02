@@ -317,51 +317,49 @@ function capitalize(text){
 THEME
 ========================== */
 
-function initializeTheme(){
+// function initializeTheme(){
 
-    const button =
-        document.getElementById("themeToggle");
+//     const button =
+//         document.getElementById("themeToggle");
 
-    if(!button) return;
+//     if(!button) return;
 
-    if(localStorage.getItem("theme")==="light"){
+//     if(localStorage.getItem("theme")==="light"){
 
-        document.body.classList.add("light");
+//         document.body.classList.add("light");
 
-        button.textContent="☀️";
+//         button.textContent="☀️";
 
-    }
+//     }
 
-    button.onclick=()=>{
+//     button.onclick=()=>{
 
-        document.body.classList.toggle("light");
+//         document.body.classList.toggle("light");
 
-        const light =
+//         const light =
 
-            document.body.classList.contains("light");
+//             document.body.classList.contains("light");
 
-        button.textContent =
+//         button.textContent =
 
-            light ? "☀️" : "🌙";
+//             light ? "☀️" : "🌙";
 
-        localStorage.setItem(
+//         localStorage.setItem(
 
-            "theme",
+//             "theme",
 
-            light ? "light" : "dark"
+//             light ? "light" : "dark"
 
-        );
+//         );
 
-    };
+//     };
 
-}
+// }
 /* ==========================
 EVENTS
 ========================== */
 
 window.addEventListener("DOMContentLoaded", () => {
-
-    initializeTheme();
 
     loadCreators();
 
