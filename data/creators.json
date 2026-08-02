@@ -230,9 +230,9 @@
     "profileImage": "images/taylor.jpg",
     "stats": {
       "Vocals": 95,
-      "Discography": 83,
+      "Discography": 95,
       "Commercial": 92,
-      "Influence": 87,
+      "Influence": 98,
       "Performance": 95,
       "Longevity": 95
     },
@@ -254,7 +254,7 @@
       "Vocals": 95,
       "Discography": 86,
       "Commercial": 92,
-      "Influence": 89,
+      "Influence": 96,
       "Performance": 93,
       "Longevity": 95
     },
@@ -274,7 +274,7 @@
     "profileImage": "images/weeknd.jpg",
     "stats": {
       "Vocals": 95,
-      "Discography": 84,
+      "Discography": 93,
       "Commercial": 91,
       "Influence": 88,
       "Performance": 94,
@@ -1548,7 +1548,7 @@
       "Vocals": 92,
       "Discography": 87,
       "Commercial": 89,
-      "Influence": 91,
+      "Influence": 80,
       "Performance": 89,
       "Longevity": 90
     },
@@ -1968,7 +1968,7 @@
       "Current Form": 89,
       "Physicality": 95,
       "Influence": 85,
-      "Ball Control": 85
+      "Ball Control": 80
     },
     "metadata": {
       "verified": true,
@@ -1988,7 +1988,7 @@
       "Technical Ability": 93,
       "Achievements": 92,
       "Current Form": 95,
-      "Physicality": 93,
+      "Physicality": 76,
       "Influence": 95,
       "Ball Control": 94
     },
@@ -2009,8 +2009,8 @@
     "stats": {
       "Technical Ability": 91,
       "Achievements": 91,
-      "Current Form": 90,
-      "Physicality": 93,
+      "Current Form": 70,
+      "Physicality": 82,
       "Influence": 92,
       "Ball Control": 90
     },
@@ -2030,9 +2030,9 @@
     "overall": 85,
     "stats": {
       "Technical Ability": 89,
-      "Achievements": 86,
+      "Achievements": 70,
       "Current Form": 91,
-      "Physicality": 89,
+      "Physicality": 74,
       "Influence": 87,
       "Ball Control": 85
     },
@@ -2056,7 +2056,7 @@
       "Current Form": 93,
       "Physicality": 92,
       "Influence": 91,
-      "Ball Control": 87
+      "Ball Control": 78
     },
     "metadata": {
       "verified": true,
@@ -7243,7 +7243,7 @@
     "country": "United Kingdom",
     "profileImage": "images/adele.jpg",
     "stats": {
-      "Vocals": 86,
+      "Vocals": 97,
       "Discography": 92,
       "Commercial": 87,
       "Influence": 86,
@@ -10547,8 +10547,8 @@
       "Achievements": 94,
       "Current Form": 84,
       "Physicality": 80,
-      "Influence": 83,
-      "Ball Control": 74
+      "Influence": 93,
+      "Ball Control": 92
     },
     "metadata": {
       "verified": true,
@@ -10569,8 +10569,8 @@
       "Achievements": 93,
       "Current Form": 84,
       "Physicality": 78,
-      "Influence": 78,
-      "Ball Control": 87
+      "Influence": 88,
+      "Ball Control": 95
     },
     "metadata": {
       "verified": true,
@@ -10587,7 +10587,7 @@
     "country": "Norway",
     "profileImage": "images/erling-haaland.jpg",
     "stats": {
-      "Technical Ability": 77,
+      "Technical Ability": 82,
       "Achievements": 88,
       "Current Form": 95,
       "Physicality": 95,
@@ -10611,7 +10611,7 @@
     "stats": {
       "Technical Ability": 86,
       "Achievements": 91,
-      "Current Form": 76,
+      "Current Form": 90,
       "Physicality": 72,
       "Influence": 92,
       "Ball Control": 92
@@ -10631,10 +10631,10 @@
     "country": "Belgium",
     "profileImage": "images/kevin-de-bruyne.jpg",
     "stats": {
-      "Technical Ability": 72,
+      "Technical Ability": 93,
       "Achievements": 81,
       "Current Form": 86,
-      "Physicality": 92,
+      "Physicality": 70,
       "Influence": 81,
       "Ball Control": 80
     },
@@ -10654,7 +10654,7 @@
     "profileImage": "images/robert-lewandowski.jpg",
     "stats": {
       "Technical Ability": 92,
-      "Achievements": 85,
+      "Achievements": 90,
       "Current Form": 90,
       "Physicality": 87,
       "Influence": 94,
@@ -10677,8 +10677,8 @@
     "stats": {
       "Technical Ability": 88,
       "Achievements": 94,
-      "Current Form": 95,
-      "Physicality": 95,
+      "Current Form": 68,
+      "Physicality": 80,
       "Influence": 82,
       "Ball Control": 93
     },
@@ -10697,9 +10697,9 @@
     "country": "Croatia",
     "profileImage": "images/luka-modric.jpg",
     "stats": {
-      "Technical Ability": 74,
+      "Technical Ability": 90,
       "Achievements": 87,
-      "Current Form": 90,
+      "Current Form": 80,
       "Physicality": 72,
       "Influence": 77,
       "Ball Control": 87
@@ -10719,8 +10719,8 @@
     "country": "Germany",
     "profileImage": "images/toni-kroos.jpg",
     "stats": {
-      "Technical Ability": 77,
-      "Achievements": 72,
+      "Technical Ability": 92,
+      "Achievements": 88,
       "Current Form": 78,
       "Physicality": 76,
       "Influence": 79,
@@ -10741,7 +10741,7 @@
     "country": "Netherlands",
     "profileImage": "images/virgil-van-dijk.jpg",
     "stats": {
-      "Technical Ability": 93,
+      "Technical Ability": 78,
       "Achievements": 95,
       "Current Form": 89,
       "Physicality": 95,
@@ -10768,7 +10768,7 @@
       "Current Form": 93,
       "Physicality": 87,
       "Influence": 91,
-      "Ball Control": 74
+      "Ball Control": 85
     },
     "metadata": {
       "verified": true,
@@ -10788,8 +10788,8 @@
       "Technical Ability": 87,
       "Achievements": 79,
       "Current Form": 87,
-      "Physicality": 87,
-      "Influence": 75,
+      "Physicality": 74,
+      "Influence": 88,
       "Ball Control": 78
     },
     "metadata": {
@@ -10810,7 +10810,7 @@
       "Technical Ability": 94,
       "Achievements": 86,
       "Current Form": 90,
-      "Physicality": 95,
+      "Physicality": 68,
       "Influence": 88,
       "Ball Control": 95
     },
@@ -10832,9 +10832,9 @@
       "Technical Ability": 92,
       "Achievements": 76,
       "Current Form": 76,
-      "Physicality": 91,
-      "Influence": 94,
-      "Ball Control": 72
+      "Physicality": 76,
+      "Influence": 72,
+      "Ball Control": 85
     },
     "metadata": {
       "verified": true,
@@ -10876,8 +10876,8 @@
       "Technical Ability": 79,
       "Achievements": 72,
       "Current Form": 73,
-      "Physicality": 74,
-      "Influence": 92,
+      "Physicality": 90,
+      "Influence": 65,
       "Ball Control": 72
     },
     "metadata": {
@@ -10896,10 +10896,10 @@
     "profileImage": "images/rodri.jpg",
     "stats": {
       "Technical Ability": 95,
-      "Achievements": 77,
+      "Achievements": 92,
       "Current Form": 87,
       "Physicality": 83,
-      "Influence": 72,
+      "Influence": 88,
       "Ball Control": 88
     },
     "metadata": {
@@ -10918,7 +10918,7 @@
     "profileImage": "images/declan-rice.jpg",
     "stats": {
       "Technical Ability": 85,
-      "Achievements": 90,
+      "Achievements": 72,
       "Current Form": 86,
       "Physicality": 92,
       "Influence": 77,
@@ -10942,9 +10942,9 @@
       "Technical Ability": 81,
       "Achievements": 80,
       "Current Form": 85,
-      "Physicality": 87,
+      "Physicality": 68,
       "Influence": 90,
-      "Ball Control": 79
+      "Ball Control": 88
     },
     "metadata": {
       "verified": true,
@@ -10964,9 +10964,9 @@
       "Technical Ability": 82,
       "Achievements": 78,
       "Current Form": 73,
-      "Physicality": 88,
+      "Physicality": 74,
       "Influence": 95,
-      "Ball Control": 74
+      "Ball Control": 85
     },
     "metadata": {
       "verified": true,
@@ -11005,7 +11005,7 @@
     "country": "France",
     "profileImage": "images/ousmane-dembele.jpg",
     "stats": {
-      "Technical Ability": 76,
+      "Technical Ability": 85,
       "Achievements": 94,
       "Current Form": 81,
       "Physicality": 80,
@@ -11028,10 +11028,10 @@
     "profileImage": "images/lebron-james.jpg",
     "stats": {
       "Technical Ability": 77,
-      "Achievements": 73,
+      "Achievements": 95,
       "Current Form": 79,
-      "Physicality": 82,
-      "Influence": 75,
+      "Physicality": 95,
+      "Influence": 98,
       "Ball Control": 79
     },
     "metadata": {
@@ -11049,10 +11049,10 @@
     "country": "United States",
     "profileImage": "images/stephen-curry.jpg",
     "stats": {
-      "Technical Ability": 74,
-      "Achievements": 73,
+      "Technical Ability": 96,
+      "Achievements": 88,
       "Current Form": 85,
-      "Physicality": 95,
+      "Physicality": 55,
       "Influence": 91,
       "Ball Control": 89
     },
@@ -11096,8 +11096,8 @@
       "Technical Ability": 81,
       "Achievements": 90,
       "Current Form": 83,
-      "Physicality": 79,
-      "Influence": 77,
+      "Physicality": 97,
+      "Influence": 88,
       "Ball Control": 78
     },
     "metadata": {
@@ -11118,7 +11118,7 @@
       "Technical Ability": 88,
       "Achievements": 73,
       "Current Form": 84,
-      "Physicality": 90,
+      "Physicality": 70,
       "Influence": 89,
       "Ball Control": 86
     },
@@ -11140,9 +11140,9 @@
       "Technical Ability": 92,
       "Achievements": 90,
       "Current Form": 82,
-      "Physicality": 95,
+      "Physicality": 65,
       "Influence": 90,
-      "Ball Control": 77
+      "Ball Control": 92
     },
     "metadata": {
       "verified": true,
@@ -11160,9 +11160,9 @@
     "profileImage": "images/joel-embiid.jpg",
     "stats": {
       "Technical Ability": 86,
-      "Achievements": 95,
+      "Achievements": 75,
       "Current Form": 76,
-      "Physicality": 85,
+      "Physicality": 92,
       "Influence": 81,
       "Ball Control": 92
     },
@@ -11206,9 +11206,9 @@
       "Technical Ability": 72,
       "Achievements": 74,
       "Current Form": 87,
-      "Physicality": 78,
+      "Physicality": 90,
       "Influence": 86,
-      "Ball Control": 74
+      "Ball Control": 85
     },
     "metadata": {
       "verified": true,
@@ -11226,9 +11226,9 @@
     "profileImage": "images/anthony-edwards.jpg",
     "stats": {
       "Technical Ability": 86,
-      "Achievements": 94,
+      "Achievements": 70,
       "Current Form": 92,
-      "Physicality": 75,
+      "Physicality": 93,
       "Influence": 95,
       "Ball Control": 80
     },
@@ -11248,7 +11248,7 @@
     "profileImage": "images/victor-wembanyama.jpg",
     "stats": {
       "Technical Ability": 93,
-      "Achievements": 95,
+      "Achievements": 55,
       "Current Form": 72,
       "Physicality": 86,
       "Influence": 83,
@@ -11270,7 +11270,7 @@
     "profileImage": "images/shai-gilgeous-alexander.jpg",
     "stats": {
       "Technical Ability": 82,
-      "Achievements": 76,
+      "Achievements": 90,
       "Current Form": 87,
       "Physicality": 86,
       "Influence": 87,
@@ -11318,7 +11318,7 @@
       "Current Form": 89,
       "Physicality": 81,
       "Influence": 88,
-      "Ball Control": 85
+      "Ball Control": 97
     },
     "metadata": {
       "verified": true,
@@ -11380,7 +11380,7 @@
     "profileImage": "images/caitlin-clark.jpg",
     "stats": {
       "Technical Ability": 78,
-      "Achievements": 87,
+      "Achievements": 60,
       "Current Form": 94,
       "Physicality": 82,
       "Influence": 95,
@@ -11424,10 +11424,10 @@
     "profileImage": "images/novak-djokovic.jpg",
     "stats": {
       "Technical Ability": 92,
-      "Achievements": 85,
+      "Achievements": 98,
       "Current Form": 84,
       "Physicality": 74,
-      "Influence": 84,
+      "Influence": 92,
       "Ball Control": 94
     },
     "metadata": {
@@ -11490,7 +11490,7 @@
     "profileImage": "images/rafael-nadal.jpg",
     "stats": {
       "Technical Ability": 73,
-      "Achievements": 75,
+      "Achievements": 96,
       "Current Form": 89,
       "Physicality": 87,
       "Influence": 75,
@@ -11512,11 +11512,11 @@
     "profileImage": "images/roger-federer.jpg",
     "stats": {
       "Technical Ability": 91,
-      "Achievements": 82,
+      "Achievements": 95,
       "Current Form": 90,
       "Physicality": 90,
       "Influence": 94,
-      "Ball Control": 73
+      "Ball Control": 95
     },
     "metadata": {
       "verified": true,
@@ -11600,7 +11600,7 @@
     "profileImage": "images/lewis-hamilton.jpg",
     "stats": {
       "Technical Ability": 93,
-      "Achievements": 76,
+      "Achievements": 97,
       "Current Form": 87,
       "Physicality": 84,
       "Influence": 89,
@@ -11801,7 +11801,7 @@
       "Achievements": 84,
       "Current Form": 77,
       "Physicality": 74,
-      "Influence": 78,
+      "Influence": 96,
       "Ball Control": 86
     },
     "metadata": {
@@ -11823,7 +11823,7 @@
       "Achievements": 82,
       "Current Form": 85,
       "Physicality": 85,
-      "Influence": 76,
+      "Influence": 88,
       "Ball Control": 75
     },
     "metadata": {
@@ -11933,7 +11933,7 @@
       "Achievements": 86,
       "Current Form": 80,
       "Physicality": 83,
-      "Influence": 76,
+      "Influence": 94,
       "Ball Control": 79
     },
     "metadata": {
@@ -12765,7 +12765,7 @@
     "country": "United States",
     "profileImage": "images/denzel-washington.jpg",
     "stats": {
-      "Acting": 73,
+      "Acting": 96,
       "Versatility": 85,
       "Box Office": 91,
       "Awards": 95,
@@ -12856,7 +12856,7 @@
       "Acting": 87,
       "Versatility": 91,
       "Box Office": 88,
-      "Awards": 78,
+      "Awards": 98,
       "Influence": 93,
       "Longevity": 84
     },
@@ -16527,11 +16527,11 @@
     "country": "United States",
     "profileImage": "images/michael-jackson.jpg",
     "stats": {
-      "Vocals": 82,
+      "Vocals": 90,
       "Discography": 87,
       "Commercial": 93,
       "Influence": 95,
-      "Performance": 81,
+      "Performance": 98,
       "Longevity": 85
     },
     "metadata": {
@@ -16549,7 +16549,7 @@
     "country": "United States",
     "profileImage": "images/whitney-houston.jpg",
     "stats": {
-      "Vocals": 84,
+      "Vocals": 98,
       "Discography": 74,
       "Commercial": 78,
       "Influence": 92,
@@ -16571,7 +16571,7 @@
     "country": "United States",
     "profileImage": "images/mariah-carey.jpg",
     "stats": {
-      "Vocals": 86,
+      "Vocals": 95,
       "Discography": 86,
       "Commercial": 92,
       "Influence": 88,
@@ -17166,7 +17166,7 @@
     "profileImage": "images/michael-jordan.jpg",
     "stats": {
       "Technical Ability": 86,
-      "Achievements": 90,
+      "Achievements": 98,
       "Current Form": 77,
       "Physicality": 95,
       "Influence": 95,
@@ -17191,8 +17191,8 @@
       "Achievements": 95,
       "Current Form": 77,
       "Physicality": 81,
-      "Influence": 82,
-      "Ball Control": 76
+      "Influence": 92,
+      "Ball Control": 85
     },
     "metadata": {
       "verified": true,
@@ -17209,7 +17209,7 @@
     "country": "United States",
     "profileImage": "images/shaquille-o-neal.jpg",
     "stats": {
-      "Technical Ability": 95,
+      "Technical Ability": 65,
       "Achievements": 75,
       "Current Form": 86,
       "Physicality": 94,
@@ -17386,8 +17386,8 @@
     "profileImage": "images/tiger-woods.jpg",
     "stats": {
       "Technical Ability": 80,
-      "Achievements": 79,
-      "Current Form": 92,
+      "Achievements": 92,
+      "Current Form": 55,
       "Physicality": 86,
       "Influence": 87,
       "Ball Control": 85
@@ -17694,7 +17694,7 @@
     "profileImage": "images/michael-schumacher.jpg",
     "stats": {
       "Technical Ability": 93,
-      "Achievements": 87,
+      "Achievements": 95,
       "Current Form": 85,
       "Physicality": 85,
       "Influence": 84,
@@ -17759,10 +17759,10 @@
     "country": "United States",
     "profileImage": "images/floyd-mayweather.jpg",
     "stats": {
-      "Technical Ability": 78,
+      "Technical Ability": 96,
       "Achievements": 87,
       "Current Form": 89,
-      "Physicality": 90,
+      "Physicality": 65,
       "Influence": 73,
       "Ball Control": 82
     },
@@ -21995,7 +21995,7 @@
       "featured": false
     }
   },
-    {
+  {
     "id": 1001,
     "slug": "avril-lavigne",
     "name": "Avril Lavigne",
@@ -34487,8 +34487,7 @@
       "Originality": 66
     },
     "metadata": {
-      
-"verified": true,
+      "verified": true,
       "featured": false
     }
   },
@@ -38071,7 +38070,7 @@
       "Current Form": 86,
       "Physicality": 77,
       "Influence": 93,
-      "Ball Control": 75
+      "Ball Control": 90
     },
     "metadata": {
       "verified": true,
@@ -38748,10 +38747,10 @@
     "country": "United States",
     "profileImage": "images/mike-tyson.jpg",
     "stats": {
-      "Technical Ability": 65,
+      "Technical Ability": 80,
       "Achievements": 71,
       "Current Form": 64,
-      "Physicality": 75,
+      "Physicality": 95,
       "Influence": 75,
       "Ball Control": 73
     },
@@ -39123,10 +39122,10 @@
     "profileImage": "images/sachin-tendulkar.jpg",
     "stats": {
       "Technical Ability": 79,
-      "Achievements": 75,
+      "Achievements": 97,
       "Current Form": 70,
       "Physicality": 87,
-      "Influence": 74,
+      "Influence": 92,
       "Ball Control": 79
     },
     "metadata": {
@@ -41740,10 +41739,10 @@
     "country": "United States",
     "profileImage": "images/robert-de-niro.jpg",
     "stats": {
-      "Acting": 74,
+      "Acting": 97,
       "Versatility": 75,
       "Box Office": 68,
-      "Awards": 73,
+      "Awards": 88,
       "Influence": 75,
       "Longevity": 72
     },
@@ -41788,7 +41787,7 @@
       "Versatility": 77,
       "Box Office": 89,
       "Awards": 80,
-      "Influence": 70,
+      "Influence": 88,
       "Longevity": 72
     },
     "metadata": {
@@ -42070,11 +42069,11 @@
     "country": "United States",
     "profileImage": "images/tom-hanks.jpg",
     "stats": {
-      "Acting": 72,
+      "Acting": 94,
       "Versatility": 84,
       "Box Office": 74,
       "Awards": 83,
-      "Influence": 68,
+      "Influence": 85,
       "Longevity": 84
     },
     "metadata": {
@@ -46602,8 +46601,7 @@
     "country": "United States",
     "profileImage": "images/andrew-santino.jpg",
     "stats": {
-   
-   "Entertainment": 86,
+      "Entertainment": 86,
       "Consistency": 85,
       "Interaction": 69,
       "Growth": 86,
